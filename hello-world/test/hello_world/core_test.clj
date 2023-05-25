@@ -2,6 +2,8 @@
   (:require [clojure.test :refer :all]
             [hello-world.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest test-main
+  (testing "Main function"
+    (with-out-str
+      (-main)
+      (is (= "Hello, World!\n" (with-out-str (-main)))))))
